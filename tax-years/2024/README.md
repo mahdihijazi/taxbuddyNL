@@ -40,7 +40,7 @@ TAX_FOR_COUPLE = Yes              # Yes/No ▸ picks correct allowance
 | `GOLD_VALUE_EUR`          | € value of bullion coins/bars on 1 Jan‑2024      | [Gold Valuation In Euro](./gold-valuation-2024.md)            |
 | `OTHER_CRYPTOS_VALUE_EUR` | Sum of alt‑coins on 1 Jan‑2024                  | Exchange close × `USD_TO_EUR_RATE`         |
 | `CASH_VALUE_EUR`          | Notes & coins at home             | Count on 1 Jan‑2024                        |
-| `DEBTS_VALUE_EUR`         | Box 3‑qualifying debts            | Principal outstanding 1 Jan‑2024           |
+| `DEBTS_VALUE_EUR`         | Box 3‑qualifying debts            | [Principal outstanding 1 Jan‑2024](https://www.belastingdienst.nl/wps/wcm/connect/en/income-in-box-3/content/income-box-3-on-2024-provisional-assessment)           |
 
 ---
 
