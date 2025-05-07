@@ -47,7 +47,7 @@ This note, along with the ECB source, should be sufficient to justify your conve
 
 ---
 
-## 📎 Source
+## 📎 Data sources
 
 You can find the official ECB reference rate archive at:  
 - [ECB reference rates PDF – 29 December 2023](https://www.ecb.europa.eu/stats/exchange/eurofxref/shared/pdf/2023/12/20231229.pdf)
