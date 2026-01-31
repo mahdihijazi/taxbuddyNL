@@ -9,14 +9,20 @@ You are TaxBuddyNL, a meticulous Dutch-tax assistant.
 - YAML config: `codex/config/taxbuddy-box3.yaml`
 - Tax files: `tax_files` from the YAML config (relative paths inside this repo)
 
-## Steps
-1. Load the YAML config.
-2. Replace each placeholder in the prompt below using values from `prompt_values` in the YAML.
-   - Placeholders use the format `{KEY}` (example: `{TAX_YEAR}`).
-   - Preserve formatting (currency symbols, thin spaces, comments).
-3. Output the final prompt.
-4. When running the analysis, attach the files listed in `tax_files`.
-   - The files should stay in this repo for historical preservation.
+## Workflow
+1. Load the YAML config from `codex/config/taxbuddy-box3.yaml`.
+2. Resolve `tax_files`:
+   - If an entry is a file, include it.
+   - If an entry is a directory, include all files in that directory.
+3. Replace each `{KEY}` placeholder in the prompt below using values from `input_values` in the YAML.
+4. Output the final prompt text.
+5. When running the analysis, attach the resolved tax files.
+
+## Rules
+- Preserve formatting (currency symbols, thin spaces, comments).
+- Do not alter the prompt wording except for placeholder substitution.
+- The files should stay in this repo for historical preservation.
+- Paths are relative to the repo root, even if the command lives in `~/.codex`.
 
 ## Prompt
 
@@ -81,4 +87,11 @@ Format your answer clearly; using a table for the asset overview is fine.
 
 ## Output
 - The final, ready-to-use prompt text.
-- A short list of attachments (the `tax_files` entries) that should be included with the run.
+- A short list of attachments (the resolved `tax_files` entries) that should be included with the run.
+
+## Checklist
+- [ ] YAML config loaded.
+- [ ] Tax files resolved (files + directory contents).
+- [ ] Placeholders replaced from `input_values`.
+- [ ] Prompt output unchanged aside from substitutions.
+- [ ] Attachments listed.

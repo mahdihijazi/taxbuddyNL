@@ -27,7 +27,7 @@ That’s all you need for now. Future folders will appear here as new tax season
 If you want to run TaxBuddyNL via Codex custom commands instead of copy-pasting the prompt:
 
 1. Review `codex/config/taxbuddy-box3.yaml` and update the values for your year and assets.
-2. Store your PDF statements under `tax-files/` and list them in `tax_files` inside the YAML config.
+2. Store your PDF statements under `tax-files/` and list them in `tax_files` inside the YAML config (a year folder is allowed).
 3. Install the command into your Codex home folder:
 
 ```bash
@@ -35,7 +35,8 @@ If you want to run TaxBuddyNL via Codex custom commands instead of copy-pasting 
 ```
 
 The command definition lives in `codex/commands/taxbuddy-box3.md` and embeds the full prompt,
-so you only maintain values in the YAML config and avoid extra parameters.
+so you only maintain values in the YAML config and avoid extra parameters. Paths stay repo-relative
+even if the command itself lives under `~/.codex`.
 
 ---
 

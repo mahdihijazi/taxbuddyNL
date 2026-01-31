@@ -15,4 +15,5 @@ tax-files/
 ```
 
 Reference these files from `codex/config/taxbuddy-box3.yaml` under
-`tax_files` so the custom command knows what to attach.
+`tax_files` so the custom command knows what to attach. You can point
+`tax_files` at a year folder to include all files inside it.
