@@ -1,0 +1,20 @@
+# TaxBuddyNL custom command configuration
+# Update these values instead of passing many parameters to the command.
+
+# Store PDFs inside the repo for historical reference.
+# Example paths (add your real files under tax-files/):
+tax_files:
+  - tax-files/2024/bank-statement.pdf
+  - tax-files/2024/broker-statement.pdf
+
+prompt_values:
+  TAX_YEAR: "2024"
+  ALLOWANCE_SINGLE: "€ 57 000"
+  ALLOWANCE_COUPLE: "€ 114 000"
+  USD_TO_EUR_RATE: "0.904977"
+  BITCOIN_VALUE_EUR: "€ 10000"
+  GOLD_VALUE_EUR: "€ 5000.0"
+  OTHER_CRYPTOS_VALUE_EUR: "€ 0.00"
+  CASH_VALUE_EUR: "€ 0.00"
+  DEBTS_VALUE_EUR: "€ 0.00"
+  TAX_FOR_COUPLE: "Yes"
