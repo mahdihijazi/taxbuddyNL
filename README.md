@@ -52,6 +52,15 @@ even if the command itself lives under `~/.codex`.
  │   │   ├─ prompt.txt
  │   │   └─ README.md
  │   └─ latest → 2024/
+ ├─ codex/
+ │   ├─ commands/
+ │   │   └─ taxbuddy-box3.md
+ │   └─ config/
+ │       └─ taxbuddy-box3.yaml
+ ├─ scripts/
+ │   └─ install-codex-command.sh
+ ├─ tax-files/
+ │   └─ README.md
  ├─ README.md   ← (you are here)
  └─ LICENSE
 ```
