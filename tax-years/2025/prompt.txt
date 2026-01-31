@@ -1,0 +1,63 @@
+─── Configuration ───────────────────────────────────────────
+TAX_YEAR = 2025 # four digits are clearer
+ALLOWANCE_SINGLE = € TBD
+ALLOWANCE_COUPLE = € TBD
+USD_TO_EUR_RATE = TBD # ECB reference rate on last business day of 2024
+BITCOIN_VALUE_EUR = € 0.00 # 31-Dec close price × USD_TO_EUR_RATE
+GOLD_VALUE_EUR = € 0.00 # Gold coins/bars @ 31-Dec fixing × USD_TO_EUR_RATE
+OTHER_CRYPTOS_VALUE_EUR = € 0.00 # fill in if you hold alts
+CASH_VALUE_EUR = € 0.00 # cash in hand at 1 Jan 2025
+DEBTS_VALUE_EUR = € 0.00 # Box 3 debts; deductible above 2025 thresholds
+DEBT_THRESHOLD_SINGLE = € TBD
+DEBT_THRESHOLD_COUPLE = € TBD
+SAVINGS_RETURN_RATE = TBD
+OTHER_ASSETS_RETURN_RATE = TBD
+BOX3_TAX_RATE = TBD
+TAX_FOR_COUPLE = Yes # Yes / No (single)
+
+#################################################################
+You are a meticulous, Dutch-tax-savvy assistant.
+
+Your job: compile my {TAX_YEAR} Box 3 assets, subtract any deductible debts, calculate the taxable base and Box 3 tax, and state clearly whether I have to pay anything.
+
+Use the attached account statements and the extra context below. Answer in English.
+
+1) Extra context you must add
+• Bitcoin holdings: total value = {BITCOIN_VALUE_EUR}.
+• Gold holdings: total value = {GOLD_VALUE_EUR}.
+• Other crypto holdings: total value = {OTHER_CRYPTOS_VALUE_EUR}.
+• Cash in hand: total value = {CASH_VALUE_EUR}.
+• Box 3 debts: total value = {DEBTS_VALUE_EUR}. Only the part above the threshold is deductible.
+
+2) Exchange-rate rule
+Convert every USD amount using € per USD = {USD_TO_EUR_RATE} (ECB reference rate on the last business day of 2024).
+
+3) Cut-off rule for statements
+If a statement stops at 31 Dec 2024, treat the ending balance as the balance at 1 Jan 2025 00:00.
+
+4) What you must deliver
+• Rebuild a complete Box 3 asset table from the statements plus the extra context.
+• Show all euro values as of 1 Jan 2025 00:00.
+• For each line, cite the PDF page/section you took the figure from, or write “extra context”.
+
+Totals and Box 3 calculation
+
+• Sum all asset lines (cash counts as savings).
+• Subtract the deductible part of {DEBTS_VALUE_EUR} (use {DEBT_THRESHOLD_SINGLE} or {DEBT_THRESHOLD_COUPLE}).
+• Determine the tax-free allowance: if {TAX_FOR_COUPLE} = Yes, use {ALLOWANCE_COUPLE}; else {ALLOWANCE_SINGLE}.
+• Subtract this allowance.
+
+Split the remaining positive assets into the official categories:
+• Savings → fictitious return = {SAVINGS_RETURN_RATE}
+• Overige bezittingen → fictitious return = {OTHER_ASSETS_RETURN_RATE}
+
+Show:
+• Taxable base (0 if negative).
+• Fictitious return per category and in total.
+• Box 3 tax at {BOX3_TAX_RATE}.
+
+Conclusion
+
+State plainly whether any Box 3 tax is due for {TAX_YEAR}, and if so, the exact amount (rounded to €0.01).
+
+Format your answer clearly; a table for the asset overview is fine.
