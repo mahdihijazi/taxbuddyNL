@@ -6,7 +6,7 @@
 
 ## ✨ What is TaxBuddyNL?
 
-**TaxBuddyNL** started life as a personal prompt for estimating Dutch **Box 3** tax. The project now keeps a **versioned prompt per tax year** so the right allowances and fictitious-return rates are always at hand.
+**TaxBuddyNL** started life as a personal Box 3 workflow for estimating Dutch **Box 3** tax. The project now keeps a **versioned prompt per tax year** so the right allowances and fictitious-return rates are always at hand.
 
 ---
 
